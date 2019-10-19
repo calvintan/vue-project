@@ -6,7 +6,9 @@
       </form>
 
       <ul>
-        <li v-for="(data, index) in skills" :key='index'>{{ data.skill }}</li>
+        <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
+          <li v-for="(data, index) in skills" :key='index'>{{ data.skill }}</li>
+        </transition-group>
       </ul>
 
       <p>These are your skills.</p>
@@ -29,8 +31,12 @@ export default {
   },
   methods: {
     addSkill() {
-      this.skills.push({skill: this.skill})
-      this.skill = '';
+      if (this.skill !== '') {
+        this.skills.push({skill: this.skill})
+        this.skill = '';
+      } else {
+        alert('Please type into the field before submitting');
+      }
     }
   }
 }
@@ -38,6 +44,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+
   ul {
     margin: 0;
     padding: 0;
