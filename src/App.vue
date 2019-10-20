@@ -25,7 +25,6 @@ export default {
     display: grid;
     grid-template-rows: auto;
     justify-items: center;
-    align-items: center;
     background-color: #f8f8f8;
   }
   body, html {
@@ -34,6 +33,7 @@ export default {
   }
   #app {
     width: 50%;
+    margin-top: 40px;
   }
   .nav {
     margin-bottom: 20px;
