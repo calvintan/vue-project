@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Skills />
+    <nav class="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </nav>
+
+    <router-view />
   </div>
 </template>
 
 <script>
-import Skills from './components/Skills.vue'
-
 export default {
   name: 'app',
   components: {
-    Skills
   }
 }
 </script>
@@ -33,4 +35,18 @@ export default {
   #app {
     width: 50%;
   }
+  .nav {
+    margin-bottom: 20px;
+  }
+  .nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 20px;
+    background: #ddd;
+    margin-right: 20px;
+    color: black;
+    border-radius: 5px;
+  }
+
+
 </style>
